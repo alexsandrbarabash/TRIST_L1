@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="Демонстраційний вебзастосунок для лабораторної роботи з CI/CD та хмарних обчислень."
+    >
+    <title>CloudFlow — CI/CD без зайвих пауз</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="CloudFlow — на початок сторінки">
+        <span class="brand-mark" aria-hidden="true">CF</span>
+        <span>CloudFlow</span>
+      </a>
+      <nav aria-label="Головна навігація">
+        <a href="#pipeline">Процес</a>
+        <a href="#stack">Стек</a>
+        <a class="nav-cta" href="#result">Результат</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Лабораторна робота №1</p>
+          <h1 id="hero-title">Від коміту до хмари — автоматично.</h1>
+          <p class="hero-text">
+            Невеликий вебзастосунок, запакований у Docker та готовий до
+            безперервної доставки через GitHub Actions.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#pipeline">Переглянути процес</a>
+            <a class="button button-secondary" href="#stack">Дізнатися про стек</a>
+          </div>
+        </div>
+
+        <div
+          class="terminal"
+          role="img"
+          aria-label="Приклад успішного CI/CD процесу"
+        >
+          <div class="terminal-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="terminal-content">
+            <p><span class="prompt">$</span> git push origin main</p>
+            <p><span class="status">✓</span> HTML та CSS перевірено</p>
+            <p><span class="status">✓</span> Docker image зібрано</p>
+            <p><span class="status">✓</span> Image опубліковано</p>
+            <p><span class="status">✓</span> Зміни розгорнуто</p>
+            <p class="terminal-result">Deployment complete.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pipeline" id="pipeline" aria-labelledby="pipeline-title">
+        <div class="section-heading">
+          <p class="eyebrow">Pipeline</p>
+          <h2 id="pipeline-title">Один push запускає весь процес</h2>
+          <p>
+            Кожен етап має одну чітку відповідальність, а помилки зупиняють
+            доставку до того, як вони потраплять у хмару.
+          </p>
+        </div>
+
+        <ol class="pipeline-list">
+          <li>
+            <span class="step-number">01</span>
+            <div>
+              <h3>Перевірка коду</h3>
+              <p>HTMLHint і Stylelint знаходять проблеми у розмітці та стилях.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">02</span>
+            <div>
+              <h3>Збірка образу</h3>
+              <p>Docker створює компактний nginx-образ із готовою сторінкою.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-number">03</span>
+            <div>
+              <h3>Доставка</h3>
+              <p>GitHub Actions може опублікувати образ для оновлення VM.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="stack" id="stack" aria-labelledby="stack-title">
+        <div class="section-heading section-heading-light">
+          <p class="eyebrow">Технології</p>
+          <h2 id="stack-title">Мінімальний стек, прозорий результат</h2>
+        </div>
+        <div class="stack-grid">
+          <article>
+            <span class="stack-icon" aria-hidden="true">&lt;/&gt;</span>
+            <h3>HTML + CSS</h3>
+            <p>Семантична адаптивна сторінка без зайвих залежностей.</p>
+          </article>
+          <article>
+            <span class="stack-icon" aria-hidden="true">▣</span>
+            <h3>Docker + nginx</h3>
+            <p>Відтворюване середовище та швидка роздача статичних файлів.</p>
+          </article>
+          <article>
+            <span class="stack-icon" aria-hidden="true">✓</span>
+            <h3>Автоматичний lint</h3>
+            <p>Єдина команда перевіряє якість HTML і CSS локально та у CI.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="result" id="result" aria-labelledby="result-title">
+        <p class="eyebrow">Готово до запуску</p>
+        <h2 id="result-title">Одна команда — однакова сторінка всюди.</h2>
+        <p>Зберіть контейнер локально та відкрийте застосунок на порту 80.</p>
+        <code>docker build -t cloudflow . &amp;&amp; docker run --rm -p 80:80 cloudflow</code>
+      </section>
+    </main>
+
+    <footer>
+      <p>CloudFlow · Демонстраційний проєкт CI/CD</p>
+    </footer>
+  </body>
+</html>

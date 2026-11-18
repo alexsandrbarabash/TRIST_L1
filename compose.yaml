@@ -1,0 +1,15 @@
+services:
+  web:
+    image: ${DOCKERHUB_USERNAME}/cloudflow:latest
+    container_name: cloudflow-web
+    ports:
+      - "80:80"
+    restart: unless-stopped
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: cloudflow-watchtower
+    command: --interval 30 --cleanup cloudflow-web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
