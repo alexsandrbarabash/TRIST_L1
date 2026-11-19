@@ -9,7 +9,7 @@ services:
   watchtower:
     image: containrrr/watchtower:latest
     container_name: cloudflow-watchtower
-    command: --interval 30 --cleanup cloudflow-web
+    command: --api-version 1.44 --interval 30 --cleanup cloudflow-web
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
